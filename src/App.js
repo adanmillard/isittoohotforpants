@@ -8,12 +8,12 @@ function App() {
   const [mainTemp, setMainTemp] = useState();
   const weatherKey = process.env.REACT_APP_API_KEY;
   const [userCityInput, setUserCityInput] = useState("");
-  const [userCountyInput, setUserCountryInput] = useState("");
+  const [userCountryInput, setUserCountryInput] = useState("");
 
   const getCityWeather = () => {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountyInput}&limit=5&appid=${weatherKey}`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountryInput}&limit=5&appid=${weatherKey}`
       )
       .then((response) => {
         const lat = response.data[0].lat;
