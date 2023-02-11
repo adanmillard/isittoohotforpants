@@ -13,7 +13,7 @@ function App() {
   const getCityWeather = () => {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountyInput}&limit=5&appid=${weatherKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountyInput}&limit=5&appid=${weatherKey}`
       )
       .then((response) => {
         const lat = response.data[0].lat;
