@@ -7,13 +7,13 @@ function App() {
   const [data, setData] = useState(false);
   const [mainTemp, setMainTemp] = useState();
   const weatherKey = process.env.REACT_APP_API_KEY;
-
-  console.log(mainTemp);
+  const [userCityInput, setUserCityInput] = useState("");
+  const [userCountyInput, setUserCountryInput] = useState("");
 
   const getCityWeather = () => {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=Auckland,NZ&limit=5&appid=${weatherKey}`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountyInput}&limit=5&appid=${weatherKey}`
       )
       .then((response) => {
         const lat = response.data[0].lat;
@@ -41,14 +41,17 @@ function App() {
         <h1>Is it too hot for pants?</h1>
       </div>
       <div>
-        <label>City</label>
-        <input></input>
+        <label>City </label>
+        <input onChange={(e) => setUserCityInput(e.target.value)}></input>
+        <label>Country </label>
+        <input onChange={(e) => setUserCountryInput(e.target.value)}></input>
         <button onClick={getCityWeather}>Get Weather</button>
       </div>
       {data ? (
         <div>
           <p>
-            The Temperature is {data.main.temp} °C in {data.name}
+            The Temperature is {data.main.temp} °C in {data.name},{" "}
+            {data.sys.country}
           </p>
         </div>
       ) : (
@@ -63,7 +66,7 @@ function App() {
           mainTemp > 20 ? (
             <p>too hot for pants</p>
           ) : (
-            <p> it's too cold for pants</p>
+            <p>You should wear pants</p>
           )
         ) : null}
       </div>
