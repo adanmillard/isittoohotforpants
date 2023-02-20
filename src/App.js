@@ -8,21 +8,21 @@ function App() {
   const [mainTemp, setMainTemp] = useState();
   const weatherKey = process.env.REACT_APP_API_KEY;
   const [userCityInput, setUserCityInput] = useState("");
-  const [userCountryInput, setUserCountryInput] = useState("");
+  // const [userCountryInput, setUserCountryInput] = useState("");
 
   const getCityWeather = () => {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${userCityInput},${userCountryInput}&limit=5&appid=${weatherKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput}&units=metric&appid=${weatherKey}`
       )
-      .then((response) => {
-        const lat = response.data[0].lat;
-        const lon = response.data[0].lon;
-        setLoading(true);
-        return axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherKey}`
-        );
-      })
+      // .then((response) => {
+      //   const lat = response.data[0].lat;
+      //   const lon = response.data[0].lon;
+      //   setLoading(true);
+      //   return axios.get(
+      //     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherKey}`
+      //   );
+      // })
       .then((response) => {
         setData(response.data);
         setMainTemp(response.data.main.temp);
@@ -43,8 +43,8 @@ function App() {
       <div>
         <label>City </label>
         <input onChange={(e) => setUserCityInput(e.target.value)}></input>
-        <label>Country </label>
-        <input onChange={(e) => setUserCountryInput(e.target.value)}></input>
+        {/* <label>Country </label>
+        <input onChange={(e) => setUserCountryInput(e.target.value)}></input> */}
         <button onClick={getCityWeather}>Get Weather</button>
       </div>
       {data ? (
