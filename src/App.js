@@ -30,11 +30,12 @@ function App() {
     // })
     fetch(`/.netlify/functions/getWeather?city=${userCityInput}`)
       .then((response) => {
+        console.log(response);
+        console.log(response.data);
         setData(response.data);
         setMainTemp(response.data.main.temp);
         console.log(mainTemp);
         setLoading(false);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
