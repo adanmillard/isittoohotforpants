@@ -28,17 +28,23 @@ function App() {
     //     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherKey}`
     //   );
     // })
+
     fetch(`/.netlify/functions/getWeather?city=${userCityInput}`)
       .then((response) => {
-        console.log(response);
-        console.log(response.data);
-        setData(response.data);
-        setMainTemp(response.data.main.temp);
+        if (!response.ok) {
+          throw new Error("Network Response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setData(data);
+        setMainTemp(data.main.temp);
         console.log(mainTemp);
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("There was a problem with the fetch operation", error);
       });
   };
 
