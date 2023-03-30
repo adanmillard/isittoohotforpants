@@ -1,0 +1,14 @@
+.header-container {
+  background-color: #fa428c;
+  padding-bottom: 1%;
+  outline: 2px solid black;
+}
+.header-container header h1 {
+  color: #e9f80e;
+}
+.header-container header p {
+  color: white;
+}
+.header-container header p b {
+  color: #e9f80e;
+}/*# sourceMappingURL=heading.css.map */
