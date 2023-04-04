@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../weatherApiCall/weatherApiCall.css";
 
 export const WeatherApiCall = () => {
@@ -8,7 +8,7 @@ export const WeatherApiCall = () => {
   const [data, setData] = useState(false);
   const [mainTemp, setMainTemp] = useState();
   const [userCityInput, setUserCityInput] = useState("");
-
+  /*
   //Dev Use
   const weatherKey = process.env.REACT_APP_API_KEY;
 
@@ -32,8 +32,8 @@ export const WeatherApiCall = () => {
         console.log(error);
       });
   };
+*/
 
-  /*
   const getCityWeather = () => {
     setData(false);
     setMainTemp("");
@@ -59,7 +59,7 @@ export const WeatherApiCall = () => {
         console.log("There was a problem with the fetch operation", error);
       });
   };
-*/
+
   return (
     <div className="weather-api-container">
       <div className="label-input-container">
