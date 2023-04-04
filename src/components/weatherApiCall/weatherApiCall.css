@@ -13,6 +13,7 @@
   text-align: center;
   height: 2.5rem;
   width: 18rem;
+  font-size: 1rem;
   margin-bottom: 1%;
   border-radius: 10px;
 }
@@ -30,5 +31,5 @@
 .weather-api-container .loading-msg,
 .weather-api-container .outcome-msg {
   color: #434707;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }/*# sourceMappingURL=weatherApiCall.css.map */
