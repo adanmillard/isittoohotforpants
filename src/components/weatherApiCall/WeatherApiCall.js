@@ -9,6 +9,7 @@ export const WeatherApiCall = () => {
   const [mainTemp, setMainTemp] = useState();
   const [userCityInput, setUserCityInput] = useState("");
 
+  /*
   //Dev Use
   const weatherKey = process.env.REACT_APP_API_KEY;
 
@@ -32,8 +33,8 @@ export const WeatherApiCall = () => {
         console.log(error);
       });
   };
+*/
 
-  /*
   const getCityWeather = () => {
     setData(false);
     setMainTemp("");
@@ -59,7 +60,7 @@ export const WeatherApiCall = () => {
         console.log("There was a problem with the fetch operation", error);
       });
   };
-*/
+
   return (
     <div className="weather-api-container">
       <div className="label-input-container">
