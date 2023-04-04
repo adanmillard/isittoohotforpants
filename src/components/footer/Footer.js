@@ -1,11 +1,12 @@
 import React from "react";
+import "../footer/footer.css";
 
 export const Footer = () => {
   return (
-    <div>
-      <div>
-        <p>Is it too hot for pants. Created by Adan Millard 2023.</p>
+    <footer className="footer-main-container">
+      <div className="footer-container">
+        <p>Is it too hot for pants is created by Adan Millard 2023.</p>
       </div>
-    </div>
+    </footer>
   );
 };

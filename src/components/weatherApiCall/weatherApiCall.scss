@@ -1,0 +1,37 @@
+.weather-api-container {
+  .label-input-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 2.5rem;
+      color: #434707;
+      margin-bottom: 1%;
+    }
+    input {
+      text-align: center;
+      height: 2.5rem;
+      width: 18rem;
+      font-size: 1rem;
+      margin-bottom: 1%;
+      border-radius: 10px;
+    }
+    button {
+      width: 18.5rem;
+      margin-bottom: 1%;
+      height: 3rem;
+      border-radius: 10px;
+      background-color: #fa428c;
+      color: #e9f80e;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+  .response-msg,
+  .loading-msg,
+  .outcome-msg {
+    color: #434707;
+    font-size: 1.3rem;
+  }
+}

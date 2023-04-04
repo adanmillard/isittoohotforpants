@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import "../weatherApiCall/weatherApiCall.css";
 
 export const WeatherApiCall = () => {
   const [loading, setLoading] = useState(false);
@@ -8,6 +9,7 @@ export const WeatherApiCall = () => {
   const [mainTemp, setMainTemp] = useState();
   const [userCityInput, setUserCityInput] = useState("");
 
+  /*
   //Dev Use
   const weatherKey = process.env.REACT_APP_API_KEY;
 
@@ -31,8 +33,8 @@ export const WeatherApiCall = () => {
         console.log(error);
       });
   };
+*/
 
-  /*
   const getCityWeather = () => {
     setData(false);
     setMainTemp("");
@@ -58,10 +60,10 @@ export const WeatherApiCall = () => {
         console.log("There was a problem with the fetch operation", error);
       });
   };
-*/
+
   return (
-    <div>
-      <div>
+    <div className="weather-api-container">
+      <div className="label-input-container">
         <label>City: </label>
         <input
           onChange={(e) => setUserCityInput(e.target.value)}
@@ -70,7 +72,7 @@ export const WeatherApiCall = () => {
         <button onClick={getCityWeather}>Should you wear pants?</button>
       </div>
       {data ? (
-        <div>
+        <div className="response-msg">
           <p>
             The current temperature in {data.name} {data.sys.country} is{" "}
             {Math.round(data.main.temp)}°C, with {data.main.humidity}% humidity
@@ -79,12 +81,12 @@ export const WeatherApiCall = () => {
         </div>
       ) : (
         loading && (
-          <div>
+          <div className="loading-msg">
             <p>Checking for pants...</p>
           </div>
         )
       )}
-      <div>
+      <div className="outcome-msg">
         {data ? (
           mainTemp > 20 ? (
             <p>Based on this it is too hot for pants. 🔥</p>
