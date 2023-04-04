@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../weatherApiCall/weatherApiCall.css";
 
 export const WeatherApiCall = () => {
