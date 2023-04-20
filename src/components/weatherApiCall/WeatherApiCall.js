@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-// import axios from "axios";
 import "../weatherApiCall/weatherApiCall.css";
 
 export const WeatherApiCall = () => {
@@ -8,31 +7,6 @@ export const WeatherApiCall = () => {
   const [data, setData] = useState(false);
   const [mainTemp, setMainTemp] = useState();
   const [userCityInput, setUserCityInput] = useState("");
-  /*
-  //Dev Use
-  const weatherKey = process.env.REACT_APP_API_KEY;
-
-  //Dev use
-  const getCityWeather = () => {
-    setData(false);
-    setMainTemp("");
-    setLoading(true);
-
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput}&units=metric&appid=${weatherKey}`
-      )
-      .then((response) => {
-        setData(response.data);
-        setMainTemp(response.data.main.temp);
-        setLoading(false);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-*/
 
   const getCityWeather = () => {
     setData(false);
