@@ -31,7 +31,8 @@
 }
 .weather-api-container .response-msg,
 .weather-api-container .loading-msg,
-.weather-api-container .outcome-msg {
+.weather-api-container .outcome-msg,
+.weather-api-container .error-msg {
   color: black;
   font-size: 1.3rem;
 }/*# sourceMappingURL=weatherApiCall.css.map */
