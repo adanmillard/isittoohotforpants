@@ -6,7 +6,6 @@
 }
 .weather-api-container .label-input-container label {
   font-size: 2.5rem;
-  color: #434707;
   margin-bottom: 1%;
 }
 .weather-api-container .label-input-container input {
@@ -22,14 +21,17 @@
   margin-bottom: 1%;
   height: 3rem;
   border-radius: 10px;
-  background-color: #fa428c;
+  background-color: black;
   color: #e9f80e;
   font-size: 1rem;
   cursor: pointer;
 }
+.weather-api-container .label-input-container button:hover {
+  outline: #e9f80e 3px solid;
+}
 .weather-api-container .response-msg,
 .weather-api-container .loading-msg,
 .weather-api-container .outcome-msg {
-  color: #434707;
+  color: black;
   font-size: 1.3rem;
 }/*# sourceMappingURL=weatherApiCall.css.map */

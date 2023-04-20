@@ -6,7 +6,7 @@
     flex-direction: column;
     label {
       font-size: 2.5rem;
-      color: #434707;
+      // color: #434707;
       margin-bottom: 1%;
     }
     input {
@@ -22,16 +22,19 @@
       margin-bottom: 1%;
       height: 3rem;
       border-radius: 10px;
-      background-color: #fa428c;
+      background-color: black;
       color: #e9f80e;
       font-size: 1rem;
       cursor: pointer;
+    }
+    button:hover {
+      outline: #e9f80e 3px solid;
     }
   }
   .response-msg,
   .loading-msg,
   .outcome-msg {
-    color: #434707;
+    color: black;
     font-size: 1.3rem;
   }
 }
