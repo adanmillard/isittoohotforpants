@@ -7,6 +7,7 @@ export const WeatherApiCall = () => {
   const [data, setData] = useState(false);
   const [mainTemp, setMainTemp] = useState();
   const [userCityInput, setUserCityInput] = useState("");
+  const [error, setError] = useState("");
 
   const getCityWeather = () => {
     setData(false);
@@ -31,6 +32,8 @@ export const WeatherApiCall = () => {
       })
       .catch((error) => {
         console.log("There was a problem with the fetch operation", error);
+        setError("Error checking for pants. Please enter a valid city.");
+        setLoading(false);
       });
   };
 
@@ -68,6 +71,11 @@ export const WeatherApiCall = () => {
           )
         ) : null}
       </div>
+      {error && (
+        <div className="error-msg">
+          <p>{error}</p>
+        </div>
+      )}
     </div>
   );
 };
