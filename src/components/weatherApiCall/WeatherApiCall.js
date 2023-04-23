@@ -13,6 +13,7 @@ export const WeatherApiCall = () => {
     setData(false);
     setMainTemp("");
     setLoading(true);
+    setError("");
 
     fetch(
       `https://ornate-brioche-82b84c.netlify.app/.netlify/functions/getWeather?city=${userCityInput}`
