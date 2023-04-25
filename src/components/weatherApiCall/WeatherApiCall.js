@@ -5,7 +5,6 @@ import PlacesAutoComplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
-import axios from "axios";
 
 export const WeatherApiCall = () => {
   const [loading, setLoading] = useState(false);
@@ -19,28 +18,6 @@ export const WeatherApiCall = () => {
     lng: null,
   });
 
-  const weatherKey = process.env.REACT_APP_API_KEY;
-
-  const getCityWeather = () => {
-    setData(false);
-    setMainTemp("");
-    setLoading(true);
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&&appid=${weatherKey}`
-      )
-      .then((response) => {
-        setData(response.data);
-        setMainTemp(response.data.main.temp);
-        setLoading(false);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  /*
   const getCityWeather = async () => {
     setData(false);
     setMainTemp("");
@@ -69,7 +46,7 @@ export const WeatherApiCall = () => {
         setLoading(false);
       });
   };
-*/
+
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
     const latLng = await getLatLng(results[0]);
