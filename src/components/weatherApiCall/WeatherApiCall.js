@@ -27,6 +27,7 @@ export const WeatherApiCall = () => {
     setLoading(true);
     setError("");
 
+
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&&appid=${weatherKey}`
