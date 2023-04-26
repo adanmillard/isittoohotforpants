@@ -5,6 +5,7 @@ import PlacesAutoComplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
+import axios from "axios";
 
 export const WeatherApiCall = () => {
   const [loading, setLoading] = useState(false);
@@ -18,32 +19,28 @@ export const WeatherApiCall = () => {
     lng: null,
   });
 
-  const getCityWeather = async () => {
+  const weatherKey = process.env.REACT_APP_API_KEY;
+
+  const getCityWeather = () => {
     setData(false);
     setMainTemp("");
     setLoading(true);
     setError("");
 
-    fetch(
-      `https://ornate-brioche-82b84c.netlify.app/.netlify/functions/getWeather?lat=${coordinates.lat}&lon=${coordinates.lng}`,
-      { mode: "no-cors" }
-    )
+
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&&appid=${weatherKey}`
+      )
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network Response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        setMainTemp(data.main.temp);
-        console.log(mainTemp);
+        setData(response.data);
+        setMainTemp(response.data.main.temp);
         setLoading(false);
+        console.log(response.data);
       })
       .catch((error) => {
-        console.log("There was a problem with the fetch operation", error);
-        setError("Error checking for pants. Please enter a valid city.");
+        console.log(error);
+        setError("Error checking for pants.");
         setLoading(false);
       });
   };
