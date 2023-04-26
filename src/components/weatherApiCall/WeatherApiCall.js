@@ -25,7 +25,8 @@ export const WeatherApiCall = () => {
     setError("");
 
     fetch(
-      `https://ornate-brioche-82b84c.netlify.app/.netlify/functions/getWeather?lat=${coordinates.lat}&?lon=${coordinates.lng}`
+      `https://ornate-brioche-82b84c.netlify.app/.netlify/functions/getWeather?lat=${coordinates.lat}&lon=${coordinates.lng}`,
+      { mode: "no-cors" }
     )
       .then((response) => {
         if (!response.ok) {
