@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 .weather-api-container .label-input-container label {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1%;
 }
 .weather-api-container .label-input-container input {
@@ -35,4 +35,15 @@
 .weather-api-container .error-msg {
   color: black;
   font-size: 1.3rem;
+}
+.weather-api-container .google-loading-msg {
+  margin-bottom: 1%;
+  color: black;
+  font-size: 1rem;
+}
+.weather-api-container .google-address-msg {
+  color: black;
+  font-size: 1rem;
+  margin-top: 1%;
+  margin-bottom: 1.5%;
 }/*# sourceMappingURL=weatherApiCall.css.map */

@@ -11,7 +11,6 @@ export const WeatherApiCall = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(false);
   const [mainTemp, setMainTemp] = useState();
-  // const [userCityInput, setUserCityInput] = useState("");
   const [error, setError] = useState("");
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = React.useState({
@@ -26,23 +25,28 @@ export const WeatherApiCall = () => {
     setMainTemp("");
     setLoading(true);
     setError("");
+    setCoordinates("");
 
-
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&&appid=${weatherKey}`
-      )
-      .then((response) => {
-        setData(response.data);
-        setMainTemp(response.data.main.temp);
-        setLoading(false);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError("Error checking for pants.");
-        setLoading(false);
-      });
+    if (!coordinates.lat || !coordinates.lng) {
+      setError("Error checking for pants.");
+      setLoading(false);
+    } else {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=metric&&appid=${weatherKey}`
+        )
+        .then((response) => {
+          setData(response.data);
+          setMainTemp(response.data.main.temp);
+          setLoading(false);
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          setError("Error checking for pants.");
+          setLoading(false);
+        });
+    }
   };
 
   const handleSelect = async (value) => {
@@ -50,14 +54,12 @@ export const WeatherApiCall = () => {
     const latLng = await getLatLng(results[0]);
     setAddress(value);
     setCoordinates(latLng);
-    console.log(coordinates.lat);
-    console.log(coordinates.lng);
   };
 
   return (
     <div className="weather-api-container">
       <div className="label-input-container">
-        <label>City: </label>
+        <label>Address: </label>
         <PlacesAutoComplete
           value={address}
           onChange={setAddress}
@@ -73,13 +75,17 @@ export const WeatherApiCall = () => {
               <input
                 {...getInputProps({ placeholder: "Type address" })}
               ></input>
-              <div>{loading ? <div>... Loading</div> : null}</div>
+              <div className="google-loading-msg">
+                {loading ? <div>... Loading</div> : null}
+              </div>
               {suggestions.map((suggestion, i) => {
                 const style = {
-                  backgroundColor: suggestion.active ? "#41b6e6" : "#fff",
+                  backgroundColor: suggestion.active ? "#e9f80e" : "#f0efeb",
+                  outline: suggestion.active ? "1px solid black" : null,
                 };
                 return (
                   <div
+                    className="google-address-msg"
                     {...getSuggestionItemProps(suggestion, { style })}
                     key={i}
                   >
