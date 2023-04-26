@@ -1,10 +1,10 @@
 const axios = require("axios");
-const cors = require("cors");
 
-exports.handler = cors({ origin: "*" })(async function (event, context) {
-  const { lat, lng } = event.queryStringParameters;
+exports.handler = async function (event, context) {
+  const lat = event.queryStringParameters.lat;
+  const lng = event.queryStringParameters.lng;
 
-  if (!lat || lat.trim() === "") {
+  if (!lat || lat.trim() === "" || !lng || lng.trim() === "") {
     return {
       statusCode: 400,
       body: "Please provide a valid city",
@@ -31,4 +31,4 @@ exports.handler = cors({ origin: "*" })(async function (event, context) {
       body: "Error getting weather data",
     };
   }
-});
+};

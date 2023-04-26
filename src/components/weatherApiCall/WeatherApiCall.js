@@ -43,7 +43,7 @@ export const WeatherApiCall = () => {
       })
       .catch((error) => {
         console.log("There was a problem with the fetch operation", error);
-        setError("Error checking for pants. Please enter a valid city.");
+        setError("Error checking for pants.");
         setLoading(false);
       });
   };
