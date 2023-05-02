@@ -13,7 +13,7 @@ export const Heading = () => {
   return (
     <div className="header-container">
       <header>
-        <div>
+        <div className="header-title">
           <h1>Is it too hot for pants?</h1>
         </div>
         <div>
