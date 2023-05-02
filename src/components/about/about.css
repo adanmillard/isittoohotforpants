@@ -10,19 +10,26 @@
   justify-content: center;
 }
 .about-container .about-content-style {
-  background-color: #fff;
+  background-color: #f0efeb;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  width: 30%;
+  width: 30rem;
+}
+.about-container .about-content-style .about-content-header {
+  display: flex;
+  justify-content: space-between;
 }
 .about-container .about-content-style .close-button {
-  background-color: #fff;
+  background-color: #f0efeb;
   color: #000;
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  align-self: end;
+  margin-bottom: 5rem;
+}
+.about-container .about-content-style article {
+  margin-top: -3rem;
 }
 .about-container p {
   color: black;
