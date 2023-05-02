@@ -5,9 +5,12 @@ export const About = ({ setOpen }) => {
   return (
     <div className="about-container">
       <div className="about-content-style">
-        <button className="close-button" onClick={() => setOpen(false)}>
-          &times;
-        </button>
+        <div className="about-content-header">
+          <h1>About:</h1>
+          <button className="close-button" onClick={() => setOpen(false)}>
+            &times;
+          </button>
+        </div>
         <article>
           <p>
             The origin of this web/app came to me after searching trying to see
