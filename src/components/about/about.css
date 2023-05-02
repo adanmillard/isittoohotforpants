@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .about-container .about-content-style {
-  background-color: #f0efeb;
+  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -21,7 +21,7 @@
   justify-content: space-between;
 }
 .about-container .about-content-style .close-button {
-  background-color: #f0efeb;
+  background-color: #fff;
   color: #000;
   border: none;
   font-size: 2rem;
