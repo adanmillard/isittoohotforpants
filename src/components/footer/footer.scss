@@ -1,14 +1,22 @@
 .footer-main-container {
   .footer-container {
-    background-color: black;
+    background-color: #4a4b4a;
     width: 100%;
     padding-top: 1%;
     padding-bottom: 1%;
     p {
       margin: 0;
       padding: 0;
-      color: #e9f80e;
+      color: #fff;
       font-size: 1.3rem;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      a:hover {
+        color: #e9f80e;
+        cursor: pointer;
+      }
     }
   }
 }

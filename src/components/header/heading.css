@@ -1,14 +1,28 @@
 .header-container {
-  background-color: #f0efeb;
-  padding-bottom: 1%;
+  background-color: #4a4b4a;
+  width: 100%;
 }
-.header-container header h1 {
-  color: black;
-  font-size: 2.5rem;
-  margin-bottom: 1%;
-  margin-top: 1%;
+.header-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.header-container header p {
-  color: black;
-  font-size: 1.3rem;
+.header-container header .header-title h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+.header-container header .about-button {
+  border: none;
+  background-color: #4a4b4a;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.header-container header .about-button h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.header-container header .about-button h1:hover {
+  color: #e9f80e;
 }/*# sourceMappingURL=heading.css.map */
