@@ -39,10 +39,8 @@ export const WeatherApiCall = () => {
           setData(response.data);
           setMainTemp(response.data.main.temp);
           setLoading(false);
-          console.log(response.data);
         })
         .catch((error) => {
-          console.log(error);
           setError("Error checking for pants.");
           setLoading(false);
         });
@@ -80,7 +78,7 @@ export const WeatherApiCall = () => {
               </div>
               {suggestions.map((suggestion, i) => {
                 const style = {
-                  backgroundColor: suggestion.active ? "#e9f80e" : "#f0efeb",
+                  backgroundColor: suggestion.active ? "#e9f80e" : "#fff",
                   outline: suggestion.active ? "1px solid black" : null,
                 };
                 return (
