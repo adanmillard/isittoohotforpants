@@ -1,29 +1,25 @@
 .header-container {
   background-color: #4a4b4a;
-  // padding-bottom: 1%;
   width: 100%;
   header {
     display: flex;
-    // flex-direction: column;
     justify-content: space-between;
     align-items: center;
     .header-title {
       h1 {
         color: #fff;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-left: 1rem;
-        // margin-bottom: -0.3rem;
       }
     }
     .about-button {
-      // margin-right: 1.2rem;
       border: none;
       background-color: #4a4b4a;
       font-size: 2rem;
       cursor: pointer;
       margin-right: 1rem;
       h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: #fff;
       }
       h1:hover {
